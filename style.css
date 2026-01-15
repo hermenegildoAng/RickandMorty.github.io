@@ -1,0 +1,98 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    padding: 40px 20px;
+    color: #333;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #eee;
+   
+    justify-content: center;
+}
+
+
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; 
+    display: block;
+}
+
+.card h2 {
+    font-size: 1.2rem;
+    padding: 15px 15px 5px 15px;
+    color: #1a1a1a;
+}
+
+.card h3 {
+    font-size: 0.9rem;
+    font-weight: 400;
+    padding: 0 15px 10px 15px;
+    color: #666;
+    text-transform: capitalize;
+}
+
+.btn{
+    width: 95%;
+    height: 38px;
+    border-radius: 10px;
+    background-color: #eee;
+    color: black;
+    border-color: aquamarine;
+    background-color: aquamarine;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.btn:hover{
+    background-color: rgb(2, 68, 46);
+    color: white;
+}
+
+
+.invisible {
+    display: none;
+}
+
+
+
+.details {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #eee;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+}
