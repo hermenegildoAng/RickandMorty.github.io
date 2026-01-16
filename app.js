@@ -32,9 +32,8 @@ const switchDiv = () => {
     details.classList.toggle('invisible')
 }
 
-const busqueda = document.querySelector('.search').value;
-const option = document.querySelector('.select').value;
 
+console.log(option)
  
 
 
@@ -71,9 +70,11 @@ const getId = (e) => {
 
 const search = (f) => {
     if (f.target.classList.contains('btn1')) {
-        
-
-        fetch(url + '?' + option + '=' +  busqueda)
+        const busqueda = document.querySelector('.search').value;
+const option = document.querySelector('.select').value;
+        console.log(url + '/?' + option + '=' +  busqueda)
+        fetch(url + '/?' + option + '=' +  busqueda)
+       
             .then((response) => response.json())
             .then(data => {
                 data.results.forEach(character => {
