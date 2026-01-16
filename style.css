@@ -13,6 +13,7 @@ body {
     justify-content: center;
     align-items: center;
     align-content: center;
+    text-align: center;
 }
 
 .container {
@@ -80,6 +81,23 @@ body {
 }
 
 
+.btn1{
+    width: 30%;
+    height: 38px;
+    border-radius: 10px;
+    background-color: #eee;
+    color: black;
+    border-color: aquamarine;
+    background-color: aquamarine;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.btn:hover{
+    background-color: rgb(2, 68, 46);
+    color: white;
+}
+
 
 .details {
     width: 100%;
@@ -95,4 +113,39 @@ body {
     justify-content: center;
     padding: 10px;
     text-align: center;
+}
+
+.cont2{
+    display:contents;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    margin: 5px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+input {
+    padding: 5px;
+    margin-top: 5px;
+    width: 40%;
+    height: 38px;
+    color: #1a1a1a;
+    border-radius: 10px;
+    border: 2px solid rgb(136, 148, 154);
+    font-size: 18px;
+}
+
+select {
+    padding: 5px;
+    margin-top: 5px;
+    width: 20%;
+    height: 38px;
+    color: #1a1a1a;
+    border-radius: 10px;
+    border: 2px solid rgb(136, 148, 154);
+    font-size: 18px;
 }

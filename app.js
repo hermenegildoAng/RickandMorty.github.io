@@ -2,6 +2,12 @@ const url = 'https://rickandmortyapi.com/api/character';
 const container = document.querySelector('.container')
 const details = document.querySelector('.details')
 
+const parametro = document.querySelector('.search')
+const buscador = document.querySelector('.cont2')
+
+
+
+
 
 
 
@@ -25,6 +31,11 @@ const switchDiv = () => {
     container.classList.toggle('invisible')
     details.classList.toggle('invisible')
 }
+
+const busqueda = document.querySelector('.search').value;
+const option = document.querySelector('.select').value;
+
+ 
 
 
 const getId = (e) => {
@@ -58,6 +69,23 @@ const getId = (e) => {
     }
 }
 
+const search = (f) => {
+    if (f.target.classList.contains('btn1')) {
+        
+
+        fetch(url + '?' + option + '=' +  busqueda)
+            .then((response) => response.json())
+            .then(data => {
+                data.results.forEach(character => {
+                    const characterCard = card(character);
+                    container.appendChild(characterCard); 
+                });
+        });
+
+       
+    }
+}
+
 fetch(url + '?page=' + page)
     .then((response) => response.json())
     .then(data => {
@@ -67,4 +95,8 @@ fetch(url + '?page=' + page)
         });
     });
 
+
+
+
 container.addEventListener('click', getId)
+buscador.addEventListener('click', search)
