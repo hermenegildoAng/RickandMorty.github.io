@@ -8,7 +8,15 @@ const buscador = document.querySelector('.cont2')
 
 
 
-
+const renderPerso = (Perso) => {
+    
+    container.innerHTML = ''; 
+    
+    Perso.forEach(Perso => {
+        const characterCard = card(Perso);
+        container.appendChild(characterCard);
+    });
+};
 
 
 const card = character => {
@@ -69,23 +77,24 @@ const getId = (e) => {
 }
 
 const search = (f) => {
+    
     if (f.target.classList.contains('btn1')) {
         const busqueda = document.querySelector('.search').value;
-const option = document.querySelector('.select').value;
-        console.log(url + '/?' + option + '=' +  busqueda)
-        fetch(url + '/?' + option + '=' +  busqueda)
-       
-            .then((response) => response.json())
+        const option = document.querySelector('.select').value;
+        
+     
+        fetch(`${url}/?${option}=${busqueda}`)
+            .then(response => response.json())
             .then(data => {
-                data.results.forEach(character => {
-                    const characterCard = card(character);
-                    container.appendChild(characterCard); 
-                });
-        });
-
-       
+                if (data.results) {
+                    renderPerso(data.results);
+                } else {
+                    container.innerHTML = `<h2>No se encontraron resultados para "${busqueda}"</h2>`;
+                }
+            })
+            .catch(err => console.error("Error en la búsqueda:", err));
     }
-}
+};
 
 fetch(url + '?page=' + page)
     .then((response) => response.json())
